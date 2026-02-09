@@ -27,7 +27,6 @@ both PC and Raspberry Pi deployment.
 - Python  
 - OpenCV  
 - Ultralytics YOLOv8  
-- Object Tracking (ByteTrack / BoT-SORT)
 
 ---
 
