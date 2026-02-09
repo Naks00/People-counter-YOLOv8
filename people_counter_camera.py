@@ -61,8 +61,18 @@ while True:
 
  
     cv2.line(frame, (line_x, 0), (line_x, frame.shape[0]), (255, 0, 0), 2)
-    cv2.putText(frame, f"Left to Right: {people_down} Right to Left: {people_up}", (10, 50),
-                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+# tekst s lijeve strane linije
+    left_text = f"Left to Right: {people_down}"
+    cv2.putText(frame, left_text, (10, 50),
+            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+
+# tekst s desne strane linije
+    right_text = f"Right to Left: {people_up}"
+    text_size, _ = cv2.getTextSize(right_text, cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
+    text_width = text_size[0]
+    cv2.putText(frame, right_text, (frame_width - text_width - 10, 50),
+            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+
 
    
     out.write(frame)
